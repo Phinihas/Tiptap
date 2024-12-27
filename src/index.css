@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes highlight {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+.editor-container {
+  @apply min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8;
+}
+
+.editor-wrapper {
+  @apply max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.toolbar-button {
+  @apply p-2 rounded transition-all duration-200 ease-in-out;
+  @apply hover:bg-gray-100 hover:scale-110;
+  @apply active:scale-95;
+}
+
+.highlight-animation {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: highlight 1s ease-in-out;
+}
